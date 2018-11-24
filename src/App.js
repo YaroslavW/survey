@@ -5,12 +5,12 @@ var firebase = require('firebase')
 
 
 
-  var config = { //all data from your dataBase
-    apiKey: "yourApiKey",
-    authDomain: "yourAuthDomain",
-    databaseURL: "yourDatabaseURL",
+  var config = { //here your data from your firebase
+    apiKey: "apiKey",
+    authDomain: "authDomain",
+    databaseURL: "databaseURL",
     projectId: "projectId",
-    storageBucket: "storageBucket.appspot.com",
+    storageBucket: "storageBucket",
     messagingSenderId: "messagingSenderId"
   };
   firebase.initializeApp(config);
@@ -36,7 +36,7 @@ class App extends Component {
     var name =this.refs.name.value; 
     this.setState({ name: name},
       ()=>console.log(this.state))
-    // console.log(this.state)
+  
     event.preventDefault()
   }
   handleQuestionSubmit(event){
@@ -126,7 +126,7 @@ class App extends Component {
       </span>
       questions = ''
     } else if(this.state.submitted === true){
-
+      user = <h2>Thank you {this.state.name}</h2>
     }
     return (
       <div className="App">
