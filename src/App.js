@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
+import firebase from 'firebase/app';
+import {apiKey, authDomain, databaseURL, projectId, storageBucket, messagingSenderId, appId} from './keys';
 import './App.css';
-var uuid = require('uuid')
-var firebase = require('firebase')
+var uuid = require('uuid');
+
+// you can do so but get a warning in the console
+// var firebase = require('firebase')
 
 
 
   var config = { //here your data from your firebase
-    apiKey: "apiKey",
-    authDomain: "authDomain",
-    databaseURL: "databaseURL",
-    projectId: "projectId",
-    storageBucket: "storageBucket",
-    messagingSenderId: "messagingSenderId"
+    apiKey: apiKey,
+    authDomain: authDomain,
+    databaseURL: databaseURL,
+    projectId: projectId,
+    storageBucket: storageBucket,
+    messagingSenderId: messagingSenderId,
+    appId: appId
   };
   firebase.initializeApp(config);
-
+  // Initialize Firebase
+  
 
 class App extends Component {
   constructor(props){
